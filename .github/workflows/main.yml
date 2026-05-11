@@ -1,6 +1,8 @@
 name: Run Every 5 Minutes
 
 on:
+  repository_dispatch:
+    types: [external-cron]
   schedule:
     - cron: '0 16 * * *'
       timezone: 'Asia/Seoul'
