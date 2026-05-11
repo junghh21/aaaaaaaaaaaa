@@ -1,0 +1,13 @@
+name: Run Every 5 Minutes
+
+on:
+  schedule:
+    - cron: '*/5 * * * *'   # 5분마다 실행 (UTC 기준)
+  workflow_dispatch:         # 수동 실행도 가능하게 추가
+
+jobs:
+  test-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print timestamp
+        run: echo "Workflow triggered at $(date -u)"
